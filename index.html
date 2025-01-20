@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Architecture - Service Unavailable</title>
+    <style>
+        :root {
+            --primary-color: #34495e;
+            --secondary-color: #50e3c2;
+            --accent-color: #f39c12;
+            --background-color: #f5f7fa;
+            --text-color: #2c3e50;
+            --card-background: #ffffff;
+            --footer-background: #34495e;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--card-background);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .notice {
+            background-color: rgba(255, 0, 0, 0.1);
+            color: #c0392b;
+            border: 1px solid rgba(255, 0, 0, 0.3);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        h1, h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            color: var(--text-color);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .img-container {
+            width: 100%;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .img-container img:hover {
+            transform: scale(1.02);
+        }
+
+        .architecture-description {
+            background-color: rgba(74, 144, 226, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .architecture-description ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .link {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: var(--primary-color);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .link:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        .cta {
+            margin-top: 40px;
+            background-color: rgba(80, 227, 194, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .cta a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #ffffff;
+            padding: 20px 0;
+            background-color: var(--footer-background);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                border-radius: 0;
+            }
+
+            .content {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.75rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="notice">
+        Sorry, we have had to take down the underlying resources due to budget constraints.
+    </div>
+    <div class="container">
+        <div class="content">
+            <h1>Project Architecture Showcase</h1>
+            <p>
+                While this project is no longer hosted due to budget constraints but we're excited to share insights into its architecture.
+            </p>
+            
+            <h2>AWS Infrastructure Architecture</h2>
+            <div class="img-container">
+                <img src="./diagram.png" alt="AWS Infrastructure Architecture">
+            </div>
+            <div class="architecture-description">
+                <p>
+                    This diagram illustrates the comprehensive AWS infrastructure that powered our project. It showcases the intricate network of services and components that worked together to deliver a robust and scalable solution.
+                </p>
+                <p>
+                    Key components include:
+                </p>
+                <ul>
+                  <li>VPC for isolated network environments</li>
+                  <li>Subnets for public and private resource allocation</li>
+                  <li>NAT Gateway for private subnet internet access</li>
+                  <li>Internet Gateway for public subnet internet connectivity</li>
+                  <li>Elastic Container Registry (ECR) for storing container images</li>
+                  <li>Elastic Container Service (ECS) for container orchestration</li>
+                  <li>Application Load Balancer (ALB) for traffic routing and HTTPS redirection</li>
+                  <li>Security Groups for inbound and outbound traffic control</li>
+                  <li>Auto-scaling for ECS task management based on resource usage</li>
+                  <li>Ansible Playbooks for automated infrastructure provisioning</li>
+                  <li>GitHub Actions CI/CD for seamless code deployment</li>
+                  <li>MongoDB Atlas for external database hosting</li>
+                  <li>AWS Secrets Manager for secure credential management</li>
+                  <li>Node.js backend for job portal functionality</li>
+                  <li>Docker for application containerization</li>                  
+                </ul>
+                <p>
+                    This architecture was designed to handle high traffic loads while maintaining optimal performance and security.
+                </p>
+            </div>
+
+            <h2>Explore Further</h2>
+            <p>Although the project has been taken down, you can still explore the following resources:</p>
+            <div class="links">
+                <a href="https://github.com/yashGoyal40/jobportal-Ansible-Iac" target="_blank" class="link">Project Repository</a>
+                <a href="https://github.com/yashGoyal40/containrerised-job-portal-with-automation" target="_blank" class="link">Related Repository</a>
+                <a href="https://jobportl-backend.onrender.com" target="_blank" class="link">Sample API (Hosted on Render)</a>
+            </div>
+            
+            <div class="cta">
+                <p>If you have any questions about the architecture or need further assistance, feel free to <a href="mailto:yashg4118@gmail.com">contact me</a>.</p>
+            </div>
+        </div>
+        <footer>
+            &copy; 2025 Your Company Name. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
